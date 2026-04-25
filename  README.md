@@ -13,63 +13,43 @@ This repository contains:
 - Tests: `src/test/java`
 
 ## Requirements
-- Java 17 or newer
-- Enviornment variable `JAVA_HOME` set to your JDK installation directory
-- Run the app on windows using PowerShell or Command Prompt
+
+- **Java 17 or higher** 
 
 Verify your environment:
 ```powershell
 java -version
 ```
 
-## Build (no Maven required)
+## Build & Run
 
-This project includes simple Windows batch scripts so you can build, test and run the app without Maven or IDE integration. You only need a JDK (Java 17) installed.
+This project uses Windows batch scripts for building and testing. **No Maven required!**
 
-Files you can use (project root):
-- `build.bat` — compile sources and create `sudoku-app.jar` in the project root
-- `run-test.bat` — run test suite using the JUnit Platform Console Standalone jar (requires `lib\junit-platform-console-standalone.jar`)
-- `run.bat` — run the packaged application (`sudoku-app.jar`)
-
-Build the project by double-clicking `build.bat` or running it from PowerShell:
-
+### Quickest Way: One-Click Everything
 ```powershell
+.\build-test-run.bat
+```
+
+This runs:
+1. `build.bat` — Compiles the application
+2. `run-test.bat` — Runs tests (auto-downloads JUnit jar if needed)
+3. `run.bat` — Runs the Sudoku game
+
+### Individual Scripts
+```powershell
+# Build the application
 .\build.bat
-```
 
-Notes about compilation:
-- `build.bat` compiles sources under `src\` and places compiled classes into `target\` and creates `sudoku-app.jar` in the project root.
-
-## Run tests (no Maven)
-
-The repository includes `run-test.bat` which expects the JUnit Platform Console Standalone JAR in `lib\`.
-
-The JUnit Platform Console Standalone JAR is already present in `lib\` (this project includes it by default).
-
-1. Ensure you have built the project (run `build.bat`), then run tests:
-
-```powershell
+# Run tests (auto-downloads JUnit jar if missing)
 .\run-test.bat
-```
 
-The batch file launches the console launcher and scans the `target` classpath for tests.
-
-## Run the application
-
-
-After a successful build, launch the game by double-clicking `run.bat` or running it from PowerShell:
-
-```powershell
+# Run the game
 .\run.bat
 ```
 
-Or run the produced jar directly:
+**Note:** The first time you run `run-test.bat`, it will automatically download the JUnit Platform Console Standalone jar to `lib\` (internet connection required).
 
-```powershell
-java -jar sudoku-app.jar
-```
-
-## How to play (CLI)
+## How to Play (CLI)
 - The grid displays rows A–I and columns 1–9. Empty cells are shown as `_`.
 - Commands:
   - Place a number: `A3 5` (place 5 at row A column 3)
