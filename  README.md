@@ -16,11 +16,45 @@ This repository contains:
 
 - **Java 17 or higher** 
 
+## Dependencies
+
+### This project does NOT use Maven or Gradle.
+
+ - All dependencies are manually added in the lib/ folder:
+
+ - JUnit Platform Console Standalone (for testing):
+    - `lib/junit-platform-console-standalone-1.9.3.jar`
+
+## 🖥️ Running the Project in IDE (IntelliJ IDEA)
+
+For **IntelliJ IDEA**, the project is already configured via the `GISSUDOKU.iml` file.  
+The downloaded JUnit library (`lib/junit-platform-console-standalone.jar`) is already added as a dependency.
+
+### ✅ IntelliJ Setup (Ready to Use)
+- Open the project in IntelliJ IDEA
+- Ensure `src/main/java` is marked as **Sources Root**
+- Ensure `src/test/java` is marked as **Test Sources Root**
+- JUnit library is already configured in `lib/` and linked via module settings
+- You can directly run test classes from the IDE
+
+---
+
+## ⚠️ If Using a Different IDE (Manual Setup Required)
+
+If you are using any other IDE (Eclipse, VS Code, etc.), you must configure the setup manually:
+
+### 1. Add Source Folders
+- `src/main/java` → application code
+- `src/test/java` → test code
+
+### 2. Add JUnit Library
+Manually add the JUnit jar located at:
+
 Verify your environment:
 ```powershell
 java -version
 ```
-
+---
 ## Build & Run
 
 This project uses Windows batch scripts for building and testing. **No Maven required!**
