@@ -14,7 +14,10 @@ REM Step 3: Collect source files
 dir /s /b src\*.java > sources.txt
 
 REM Step 4: Compile
-javac -d target @sources.txt
+@REM javac -d target @sources.txt
+javac -cp "lib/*" -d target @sources.txt
+
+
 if %errorlevel% neq 0 (
 echo Compilation failed!
 pause

@@ -7,12 +7,12 @@ import java.util.Arrays;
  * Cells that are pre-filled (fixed) at game start cannot be modified.
  */
 public record Board(int[][] grid, boolean[][] fixed) {
-//    /**
-//     * Creates a new Sudoku board with an empty grid (all zeros) and no fixed cells.
-//     */
-//    public Board() {
-//        this(new int[9][9], new boolean[9][9]);
-//    }
+    /**
+     * Creates a new Sudoku board with an empty grid (all zeros) and no fixed cells.
+     */
+    public Board() {
+        this(new int[9][9], new boolean[9][9]);
+    }
 
     public Board {
     }
